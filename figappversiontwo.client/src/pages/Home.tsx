@@ -2,7 +2,6 @@ import SearchBar from "../components/SearchBar";
 import Navbar from "../components/Navbar";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import figImage from "../images/Fig.jpg";
-import Header from "../components/Header";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import KebabDiningOutlinedIcon from '@mui/icons-material/KebabDiningOutlined';
 import YardOutlinedIcon from '@mui/icons-material/YardOutlined';
