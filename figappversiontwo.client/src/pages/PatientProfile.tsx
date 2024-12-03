@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Grid, Card, Typography, Avatar, Tabs, Tab, Box } from "@mui/material";
+import Navbar from "../components/Navbar";
 
 const PatientProfile: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -9,6 +10,9 @@ const PatientProfile: React.FC = () => {
   };
 
   return (
+    <>
+    <Navbar/>
+
     <Grid container sx={{ height: "100vh" }}>
       {/* Left Sidebar: Profile Section */}
       <Grid
@@ -81,6 +85,7 @@ const PatientProfile: React.FC = () => {
         </Box>
       </Grid>
     </Grid>
+    </>
   );
 };
 
