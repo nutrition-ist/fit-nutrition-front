@@ -1,4 +1,5 @@
 import SearchBar from "../components/SearchBar";
+import Navbar from "../components/Navbar";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import figImage from "../images/Fig.jpg";
 import Header from "../components/Header";
@@ -20,7 +21,8 @@ const sections = [
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Navbar/>
+      
       <Grid
         container
         spacing={3}
