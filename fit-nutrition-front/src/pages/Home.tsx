@@ -1,11 +1,10 @@
 import SearchBar from "../components/SearchBar";
 import Navbar from "../components/Navbar";
 import { Box, Button, Grid, Typography } from "@mui/material";
-import figImage from "../images/Fig.jpg";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
-import KebabDiningOutlinedIcon from '@mui/icons-material/KebabDiningOutlined';
-import YardOutlinedIcon from '@mui/icons-material/YardOutlined';
-import LunchDiningOutlinedIcon from '@mui/icons-material/LunchDiningOutlined';
+import KebabDiningOutlinedIcon from "@mui/icons-material/KebabDiningOutlined";
+import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
+import LunchDiningOutlinedIcon from "@mui/icons-material/LunchDiningOutlined";
 
 const sections = [
   { title: "Main", url: "#", icon: <MenuBookOutlinedIcon /> },
@@ -20,8 +19,8 @@ const sections = [
 export default function Home() {
   return (
     <>
-      <Navbar/>
-      
+      <Navbar />
+
       <Grid
         container
         spacing={3}
@@ -32,12 +31,6 @@ export default function Home() {
         }}
       >
         <Grid item xs={12} style={{ textAlign: "center" }}>
-          <img
-            src={figImage}
-            alt="fig"
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-
           <SearchBar />
           <Box
             sx={{

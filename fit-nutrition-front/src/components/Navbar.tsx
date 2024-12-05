@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             alt="Profile"
             sx={{ width: 32, height: 32 }}
           />
-          <Button color="inherit" onClick={() => navigate("/profile")}>
+          <Button color="inherit" onClick={() => navigate("/patient-profile")}>
             Profile
           </Button>
         </Box>
