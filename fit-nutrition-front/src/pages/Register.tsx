@@ -1,34 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { TextField, Button, Typography, MenuItem, Box } from "@mui/material";
+import { TextField, Button, Typography, Box } from "@mui/material";
 import axios from "axios";
 
-interface FormData {
-  userType: "D" | "P"; // "D" for Dietitian, "P" for Patient
-  username: string;
+interface DietitianFormData {
   email: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
+  username: string;
+  first_name: string;
+  last_name: string;
   password: string;
+  phone: string;
+  address: string;
 }
 
 const RegisterPage: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    userType: "D",
-    username: "",
+  const [formData, setFormData] = useState<DietitianFormData>({
     email: "",
-    firstName: "",
-    lastName: "",
-    phone: "",
+    username: "",
+    first_name: "",
+    last_name: "",
     password: "",
+    phone: "",
+    address: "",
   });
 
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-  const api = axios.create({
-    baseURL: "http://127.0.0.1:8000/",
-  });
   // Handle input change
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -46,39 +45,21 @@ const RegisterPage: React.FC = () => {
     setError(null);
     setSuccessMessage(null);
 
-    const endpoint =
-      formData.userType === "D" ? "/register_dietician" : "/register_patient";
-
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const response = await api.post(endpoint, {
-        username: formData.username,
-        email: formData.email,
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        phone: formData.phone,
-        password: formData.password,
-      });
+      const response = await axios.post("http://127.0.0.1:8000/register_dietician/", formData);
 
-      setSuccessMessage(
-        `${
-          formData.userType === "D" ? "Dietitian" : "Patient"
-        } registered successfully!`
-      );
+      setSuccessMessage("Dietitian registered successfully!");
       setFormData({
-        userType: "D",
-        username: "",
         email: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
+        username: "",
+        first_name: "",
+        last_name: "",
         password: "",
+        phone: "",
+        address: "",
       });
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      setError(
-        err.response?.data?.detail || "An error occurred during registration."
-      );
+      setError(err.response?.data?.detail || "An error occurred during registration.");
     }
   };
 
@@ -96,30 +77,8 @@ const RegisterPage: React.FC = () => {
       }}
     >
       <Typography variant="h4" textAlign="center">
-        Register
+        Dietitian Registration
       </Typography>
-
-      <TextField
-        select
-        label="User Type"
-        name="userType"
-        value={formData.userType}
-        onChange={handleChange}
-        fullWidth
-        required
-      >
-        <MenuItem value="D">Dietitian</MenuItem>
-        <MenuItem value="P">Patient</MenuItem>
-      </TextField>
-
-      <TextField
-        label="Username"
-        name="username"
-        value={formData.username}
-        onChange={handleChange}
-        fullWidth
-        required
-      />
 
       <TextField
         label="Email"
@@ -132,9 +91,18 @@ const RegisterPage: React.FC = () => {
       />
 
       <TextField
+        label="Username"
+        name="username"
+        value={formData.username}
+        onChange={handleChange}
+        fullWidth
+        required
+      />
+
+      <TextField
         label="First Name"
-        name="firstName"
-        value={formData.firstName}
+        name="first_name"
+        value={formData.first_name}
         onChange={handleChange}
         fullWidth
         required
@@ -142,8 +110,18 @@ const RegisterPage: React.FC = () => {
 
       <TextField
         label="Last Name"
-        name="lastName"
-        value={formData.lastName}
+        name="last_name"
+        value={formData.last_name}
+        onChange={handleChange}
+        fullWidth
+        required
+      />
+
+      <TextField
+        label="Password"
+        name="password"
+        type="password"
+        value={formData.password}
         onChange={handleChange}
         fullWidth
         required
@@ -159,10 +137,9 @@ const RegisterPage: React.FC = () => {
       />
 
       <TextField
-        label="Password"
-        name="password"
-        type="password"
-        value={formData.password}
+        label="Address"
+        name="address"
+        value={formData.address}
         onChange={handleChange}
         fullWidth
         required
