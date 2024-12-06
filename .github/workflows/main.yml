@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:    
+    steps:
     - name: Checkout the code
       uses: actions/checkout@v3
 
@@ -32,9 +32,8 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist
+        publish_dir: fit-nutrition-front/dist
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
