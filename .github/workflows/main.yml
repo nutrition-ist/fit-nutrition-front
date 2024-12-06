@@ -10,34 +10,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:    
+    steps:
     - name: Checkout the code
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 22  # Use the version of Node.js you prefer
-
-    - name: Go to actual directory
-      run: cd ../fit-nutrition-front
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run tests
-      run: npm run test
-
-    - name: Build the project
-      run: npm run build
+    - name: Navigate and execute steps
+      run: |
+        cd fit-nutrition-front
+        npm install
+        npm run test
+        npm run build
+      env:
+        NODE_VERSION: 22
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist
+        publish_dir: fit-nutrition-front/dist
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
