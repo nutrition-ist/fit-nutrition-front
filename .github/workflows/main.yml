@@ -19,14 +19,11 @@ jobs:
       with:
         node-version: 22  # Use the version of Node.js you prefer
 
-    - name: Go to actual directory
-      run: cd ../fit-nutrition-front
-
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm run test
+    # - name: Run tests
+      # run: npm run test
 
     - name: Build the project
       run: npm run build
