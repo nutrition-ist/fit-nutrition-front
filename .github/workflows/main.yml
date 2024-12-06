@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+    steps:    
     - name: Checkout the code
       uses: actions/checkout@v3
 
@@ -18,6 +18,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 22  # Use the version of Node.js you prefer
+
+    - name: Go to actual directory
+      run: cd ../fit-nutrition-front
 
     - name: Install dependencies
       run: npm install
