@@ -5,6 +5,7 @@ import PatientProfile from "./pages/PatientProfile";
 import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
 import LandingPage from "./pages/LandingPage";
+import WIPPage from "./pages/WIPPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/wip" element={<WIPPage/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/patient-profile" element={<PatientProfile />} />

@@ -9,9 +9,11 @@ import {
   CardContent,
 } from "@mui/material";
 import HeroImage from "../images/cook.png";
-import TestimonialImage from "../images/fitman.png";
+import TestimonialImage from "../images/nitfut.jpg";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <Box>
       {/* Header Section */}
@@ -32,13 +34,25 @@ const LandingPage: React.FC = () => {
           <Button variant="text" sx={{ mx: 1 }}>
             Home
           </Button>
-          <Button variant="text" sx={{ mx: 1 }}>
+          <Button
+            variant="text"
+            sx={{ mx: 1 }}
+            onClick={() => navigate("/wip")} // Navigates to WIP
+          >
             Dietitians
           </Button>
-          <Button variant="text" sx={{ mx: 1 }}>
+          <Button
+            variant="text"
+            sx={{ mx: 1 }}
+            onClick={() => navigate("/wip")} // Navigates to WIP
+          >
             Blog
           </Button>
-          <Button variant="contained" color="primary" sx={{ mx: 1 }}>
+          <Button
+            variant="text"
+            sx={{ mx: 1 }}
+            onClick={() => navigate("/wip")} // Navigates to WIP
+          >
             Dietitian Panel
           </Button>
         </Box>
@@ -99,6 +113,15 @@ const LandingPage: React.FC = () => {
                 Explore our list of qualified dietitians tailored to your
                 preferences.
               </Typography>
+              {/* Button to navigate to WIP page */}
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2 }}
+                onClick={() => navigate("/wip")}
+              >
+                Get Started
+              </Button>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -110,6 +133,15 @@ const LandingPage: React.FC = () => {
                 Schedule a session with your selected dietitian at your
                 convenience.
               </Typography>
+              {/* Button to navigate to WIP page */}
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2 }}
+                onClick={() => navigate("/wip")}
+              >
+                Book Now
+              </Button>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4}>
@@ -120,6 +152,15 @@ const LandingPage: React.FC = () => {
               <Typography>
                 Follow personalized diet plans and track your progress.
               </Typography>
+              {/* Button to navigate to WIP page */}
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2 }}
+                onClick={() => navigate("/wip")}
+              >
+                Learn More
+              </Button>
             </Card>
           </Grid>
         </Grid>
@@ -141,24 +182,12 @@ const LandingPage: React.FC = () => {
             <Card>
               <CardContent>
                 <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
-                  Hadrian Hillless
+                  John Doe
                 </Typography>
-                <Typography sx={{ mb: 2 }}>
-                  ""I never thought I'd stick to anything structured, but this
-                  site changed my life. As a soldier constantly on the move,
-                  staying healthy wasn’t just tough—it felt impossible. This
-                  program gave me the tools to take control of my diet while
-                  still living my restless, wandering life. I've lost a
-                  significant amount of weight, feel sharper than ever, and even
-                  my crew noticed the difference. If you're competitive like me,
-                  the tracking system will keep you hooked. Plus, the meal plans
-                  are surprisingly generous—no starving involved. Trust me,
-                  coming from someone who trusts no one, this is the real deal.
-                  Highly recommend." —Hadrian H."
-                </Typography>
+                <Typography sx={{ mb: 2 }}>"I like this site 5/5"</Typography>
                 <img
                   src={TestimonialImage}
-                  alt="Hadrian Reis"
+                  alt="John Doe"
                   style={{
                     maxWidth: "60%",
                     height: "auto",
