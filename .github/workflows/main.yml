@@ -17,7 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 22  # Use the version of Node.js you prefer
+        node-version: 22  # 22 is required for some packages iirc Axios, see KuTaGoRn's commits.
 
     - name: Install dependencies
       run: npm install
@@ -29,19 +29,7 @@ jobs:
       run: npm run build
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3 # Should update pages automatically
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: dist
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
