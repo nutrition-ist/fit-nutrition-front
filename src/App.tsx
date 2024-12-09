@@ -6,6 +6,7 @@ import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
 import LandingPage from "./pages/LandingPage";
 import WIPPage from "./pages/WIPPage";
+import DietitianProfile from "./pages/DietitianProfile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/patient-profile" element={<PatientProfile />} />
+          <Route path="/dietitian-profile" element={<DietitianProfile />} />
         </Routes>
       </Router>
     </div>
