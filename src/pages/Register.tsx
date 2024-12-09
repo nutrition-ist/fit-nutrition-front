@@ -46,7 +46,7 @@ const RegisterPage: React.FC = () => {
     setSuccessMessage(null);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/register_dietician/", formData);
+      await axios.post("http://127.0.0.1:8000/register_dietician/", formData);
 
       setSuccessMessage("Dietitian registered successfully!");
       setFormData({

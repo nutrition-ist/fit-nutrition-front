@@ -312,3 +312,4 @@ public/sw.js.map
 #Need to match with * because SW may update, and therefore not match every case, changing the workbox-NNNNNNNN area.
 public/workbox-*.js 
 public/workbox-*.js.map
+dist/
