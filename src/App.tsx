@@ -1,5 +1,5 @@
 import "./App.css";
-import Home from "./pages/Home";
+import Recipes from "./pages/Recipes";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PatientProfile from "./pages/PatientProfile";
 import RegisterPage from "./pages/Register";
@@ -13,8 +13,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/wip" element={<WIPPage/>} />
+          <Route path="/wip" element={<WIPPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/recipes" element={<Recipes />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/patient-profile" element={<PatientProfile />} />
         </Routes>
