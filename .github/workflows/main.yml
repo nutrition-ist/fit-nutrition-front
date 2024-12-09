@@ -18,6 +18,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 22  # Use the version of Node.js you prefer
+        
+    - name: Install .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: "7.0.x" # Install the .NET SDK required for HTTPS certificates
+
+    - name: Export HTTPS Developer Certificate
+      run: |
+        mkdir -p $HOME/.aspnet/https
+        dotnet dev-certs https --export-path $HOME/.aspnet/https/fit-nutrition-front.client.pem --format Pem --no-password
 
     - name: Install dependencies
       run: npm install
