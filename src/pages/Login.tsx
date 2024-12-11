@@ -46,7 +46,7 @@ const LoginPage: React.FC = () => {
       localStorage.setItem("refreshToken", refresh);
 
       setSuccessMessage("Login successful!");
-      navigate("/dietitian-profile"); // Redirect to profile page
+      navigate("/dietitian-dashboard"); // Redirect to profile page
     } catch (err: any) {
       setError(err.response?.data?.detail || "Invalid username or password.");
     }
