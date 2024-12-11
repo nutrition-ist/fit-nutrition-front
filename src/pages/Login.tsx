@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { TextField, Button, Typography, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import axios from "axios";
 
 interface LoginFormData {
@@ -16,6 +17,8 @@ const LoginPage: React.FC = () => {
 
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -43,6 +46,7 @@ const LoginPage: React.FC = () => {
       localStorage.setItem("refreshToken", refresh);
 
       setSuccessMessage("Login successful!");
+      navigate("/dietitian-profile"); // Redirect to profile page
     } catch (err: any) {
       setError(err.response?.data?.detail || "Invalid username or password.");
     }
