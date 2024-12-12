@@ -6,6 +6,7 @@ import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
 import LandingPage from "./pages/LandingPage";
 import WIPPage from "./pages/WIPPage";
+import DietitianProfile from "./pages/DietitianProfile";
 import DietitianDashboard from "./pages/DietitianDashboard";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/patient-profile" element={<PatientProfile />} />
+          <Route path="/dietitian-profile" element={<DietitianProfile />} />
           <Route path="/dietitian-dashboard" element={<DietitianDashboard />} />
         </Routes>
       </Router>

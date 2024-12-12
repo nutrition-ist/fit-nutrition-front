@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "identity": "Elwindith Rhuivaul",
+    "email": "elwindith@pinkcaravancompany.com",
+    "cellNumber": "123-456-78",
+    "aboutMe": "Hello there! I'm Elwindith Rhuivaul, a spirited high elf merchant with a flair for adventure, art, and the chaotic beauty of life! After 89 years of trading, traveling, and tasting every morsel this world has to offer, I’ve developed a passion for healthy, delicious foods that fuel both body and spirit. When I’m not braving purple worm tunnels or painting my next masterpiece, I’m in the kitchen experimenting with recipes that balance flavor, creativity, and nutrition.",
+    "address": "Haytie Dwarven Union",
+    "profilePicture": "",
+    "highlightedRecipes": [
+      {
+        "id": 1,
+        "title": "Mystic Herb & Spiced Elven Flatbread",
+        "description": "A warm, aromatic flatbread infused with fresh forest herbs and a hint of chaos spices, perfect for pairing with savory dips or sweet jams."
+      },
+      {
+        "id": 2,
+        "title": "Elwindith’s Emerald Glow Salad",
+        "description": "A refreshing, vibrant mix of greens, crisp apple slices, and roasted pine nuts, topped with goat cheese and a drizzle of honey-pear vinaigrette for a touch of sweetness."
+      }
+    ]
+  }
+}
